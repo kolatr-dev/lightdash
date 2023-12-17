@@ -19,6 +19,7 @@ export enum DbtProjectType {
 
 export enum WarehouseTypes {
     BIGQUERY = 'bigquery',
+    CLICKHOUSE = 'clickhouse',
     POSTGRES = 'postgres',
     REDSHIFT = 'redshift',
     SNOWFLAKE = 'snowflake',
@@ -96,6 +97,20 @@ export type PostgresCredentials = Omit<
     CreatePostgresCredentials,
     SensitiveCredentialsFieldNames
 >;
+export type CreateClickHouseCredentials = SshTunnelConfiguration & {
+    type: WarehouseTypes.CLICKHOUSE;
+    host: string;
+    user: string;
+    password: string;
+    port: number;
+    database: string;
+    threads?: number;
+    startOfWeek?: WeekDay | null;
+};
+export type ClickHouseCredentials = Omit<
+    CreateClickHouseCredentials,
+    SensitiveCredentialsFieldNames
+>;
 export type CreateTrinoCredentials = {
     type: WarehouseTypes.TRINO;
     host: string;
@@ -153,6 +168,7 @@ export type SnowflakeCredentials = Omit<
 export type CreateWarehouseCredentials =
     | CreateRedshiftCredentials
     | CreateBigqueryCredentials
+    | CreateClickHouseCredentials
     | CreatePostgresCredentials
     | CreateSnowflakeCredentials
     | CreateDatabricksCredentials
@@ -160,6 +176,7 @@ export type CreateWarehouseCredentials =
 export type WarehouseCredentials =
     | SnowflakeCredentials
     | RedshiftCredentials
+    | ClickHouseCredentials
     | PostgresCredentials
     | BigqueryCredentials
     | DatabricksCredentials

@@ -3,6 +3,7 @@ import { Select } from '@mantine/core';
 import React, { FC, useEffect } from 'react';
 import { Controller, useWatch } from 'react-hook-form';
 import BigQueryForm from './WarehouseForms/BigQueryForm';
+import ClickHouseForm from './WarehouseForms/ClickHouseForm';
 import DatabricksForm from './WarehouseForms/DatabricksForm';
 import PostgresForm from './WarehouseForms/PostgresForm';
 import RedshiftForm from './WarehouseForms/RedshiftForm';
@@ -15,12 +16,14 @@ const WarehouseTypeLabels = {
     [WarehouseTypes.REDSHIFT]: 'Redshift',
     [WarehouseTypes.SNOWFLAKE]: 'Snowflake',
     [WarehouseTypes.DATABRICKS]: 'Databricks',
+    [WarehouseTypes.CLICKHOUSE]: 'ClickHouse',
     [WarehouseTypes.TRINO]: 'Trino',
 };
 
 const WarehouseTypeForms = {
     [WarehouseTypes.BIGQUERY]: BigQueryForm,
     [WarehouseTypes.POSTGRES]: PostgresForm,
+    [WarehouseTypes.CLICKHOUSE]: ClickHouseForm,
     [WarehouseTypes.REDSHIFT]: RedshiftForm,
     [WarehouseTypes.SNOWFLAKE]: SnowflakeForm,
     [WarehouseTypes.DATABRICKS]: DatabricksForm,

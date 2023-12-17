@@ -26,6 +26,7 @@ RUN /usr/local/dbt1.4/bin/pip install \
     "dbt-redshift~=1.4.0" \
     "dbt-snowflake~=1.4.0" \
     "dbt-bigquery~=1.4.0" \
+    "dbt-clickhouse~=1.4.0" \
     "dbt-databricks~=1.4.0" \
     "dbt-trino~=1.4.0" \
     "psycopg2-binary==2.8.6"
@@ -38,6 +39,7 @@ RUN /usr/local/dbt1.5/bin/pip install \
     "dbt-redshift~=1.5.0" \
     "dbt-snowflake~=1.5.0" \
     "dbt-bigquery~=1.5.0" \
+    "dbt-clickhouse~=1.5.0" \
     "dbt-databricks~=1.5.0" \
     "dbt-trino==1.5.0" \
     "psycopg2-binary==2.8.6"

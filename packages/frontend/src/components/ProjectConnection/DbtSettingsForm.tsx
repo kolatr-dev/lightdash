@@ -25,6 +25,7 @@ import {
     AdvancedButtonWrapper,
 } from './ProjectConnection.styles';
 import { BigQuerySchemaInput } from './WarehouseForms/BigQueryForm';
+import { ClickHouseSchemaInput } from './WarehouseForms/ClickHouseForm';
 import { DatabricksSchemaInput } from './WarehouseForms/DatabricksForm';
 import { PostgresSchemaInput } from './WarehouseForms/PostgresForm';
 import { RedshiftSchemaInput } from './WarehouseForms/RedshiftForm';
@@ -145,6 +146,8 @@ const DbtSettingsForm: FC<DbtSettingsFormProps> = ({
                 return <RedshiftSchemaInput disabled={disabled} />;
             case WarehouseTypes.SNOWFLAKE:
                 return <SnowflakeSchemaInput disabled={disabled} />;
+            case WarehouseTypes.CLICKHOUSE:
+                return <ClickHouseSchemaInput disabled={disabled} />;
             case WarehouseTypes.DATABRICKS:
                 return <DatabricksSchemaInput disabled={disabled} />;
             default: {

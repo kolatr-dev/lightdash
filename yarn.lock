@@ -2485,6 +2485,18 @@
   resolved "https://registry.npmjs.org/@casl/react/-/react-3.0.0.tgz"
   integrity sha512-1/+mHe9MmYVHzy4YrRqS/eZfSMCZdClgcbfohpMui0n4l4x6Ab4Q+Tok6ZGqzqG05vtBVT+pgb77YyZhzSEboQ==
 
+"@clickhouse/client-common@0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@clickhouse/client-common/-/client-common-0.2.6.tgz#5305c6a012158a3e18dbf3a0133e1691eb9e6cff"
+  integrity sha512-T2HwPCKi98vGGtPxcV1q5YH/tET5f1FhdKYxo3AqOdawIMPoymQGzfsxsAL5UpMsfdBYrko6Sjy3RJxt7/gYyg==
+
+"@clickhouse/client@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@clickhouse/client/-/client-0.2.6.tgz#e33093a37362ac1e8fc2e069430cb68bf7224e1b"
+  integrity sha512-vvy101CNKRHr/M7eML19fIOOSELNpE2kwvBMdqag9ImosK2Lx5e4X8D7jt84EUD1V1JC1Dp2cG36/1JJb8ZC9g==
+  dependencies:
+    "@clickhouse/client-common" "0.2.6"
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.5.0.tgz"

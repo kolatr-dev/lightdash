@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import * as yaml from 'js-yaml';
 import * as path from 'path';
 import { convertBigquerySchema } from './targets/Bigquery';
+import { convertClickHouseSchema } from './targets/clickhouse';
 import { convertDatabricksSchema } from './targets/databricks';
 import { convertPostgresSchema } from './targets/postgres';
 import { convertRedshiftSchema } from './targets/redshift';
@@ -56,6 +57,8 @@ export const warehouseCredentialsFromDbtTarget = async (
             return convertSnowflakeSchema(target);
         case 'bigquery':
             return convertBigquerySchema(target);
+        case 'clickhouse':
+            return convertClickHouseSchema(target);
         case 'redshift':
             return convertRedshiftSchema(target);
         case 'databricks':

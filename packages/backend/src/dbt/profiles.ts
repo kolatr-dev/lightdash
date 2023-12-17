@@ -99,6 +99,22 @@ const credentialsTarget = (
                     [envVar('password')]: credentials.password,
                 },
             };
+        case WarehouseTypes.CLICKHOUSE:
+            return {
+                target: {
+                    type: credentials.type,
+                    host: credentials.host,
+                    user: credentials.user, // envVarReference('user'),
+                    password: credentials.password, // envVarReference('password'),
+                    port: credentials.port,
+                    schema: credentials.database,
+                    threads: credentials.threads,
+                },
+                environment: {
+                    // [envVar('user')]: credentials.user,
+                    // [envVar('password')]: credentials.password,
+                },
+            };
         case WarehouseTypes.TRINO:
             return {
                 target: {

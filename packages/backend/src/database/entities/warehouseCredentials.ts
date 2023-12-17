@@ -4,6 +4,7 @@ export const WarehouseCredentialTableName = 'warehouse_credentials';
 
 export const warehouseTypes = [
     'bigquery',
+    'clickhouse',
     'redshift',
     'snowflake',
     'postgres',

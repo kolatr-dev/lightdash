@@ -68,6 +68,8 @@ const convertTimezone = (
             return timestampSql;
         case SupportedDbtAdapter.DATABRICKS:
             return timestampSql;
+        case SupportedDbtAdapter.CLICKHOUSE:
+            return timestampSql;
         case SupportedDbtAdapter.TRINO:
             return timestampSql;
         default:

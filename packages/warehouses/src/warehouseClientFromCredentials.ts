@@ -5,6 +5,7 @@ import {
 } from '@lightdash/common';
 import { WarehouseClient } from './types';
 import { BigqueryWarehouseClient } from './warehouseClients/BigqueryWarehouseClient';
+import { ClickHouseWarehouseClient } from './warehouseClients/ClickHouseWarehouseClient';
 import { DatabricksWarehouseClient } from './warehouseClients/DatabricksWarehouseClient';
 import { PostgresWarehouseClient } from './warehouseClients/PostgresWarehouseClient';
 import { RedshiftWarehouseClient } from './warehouseClients/RedshiftWarehouseClient';
@@ -25,6 +26,8 @@ export const warehouseClientFromCredentials = (
             return new BigqueryWarehouseClient(credentials);
         case WarehouseTypes.DATABRICKS:
             return new DatabricksWarehouseClient(credentials);
+        case WarehouseTypes.CLICKHOUSE:
+            return new ClickHouseWarehouseClient(credentials);
         case WarehouseTypes.TRINO:
             return new TrinoWarehouseClient(credentials);
         default:
